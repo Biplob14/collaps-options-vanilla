@@ -15,4 +15,18 @@
 // using selectors inside the element
 const questions = document.querySelectorAll('.question');
 
-// questions.forEach()
+questions.forEach(function(que) {
+    // console.log(que);
+    const btn = que.querySelector(".question-btn");
+    // console.log(btn);
+    btn.addEventListener('click', function() {
+        questions.forEach(function(item) {
+            if(item !== que) {
+                item.classList.remove('show-text');
+            }
+        });
+
+
+        que.classList.toggle("show-text");
+    });
+});
